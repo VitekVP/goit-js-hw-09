@@ -15,8 +15,8 @@ function handleSubmitClick(event) {
   let quantityPromise = Number(amountEl.value);
 
   for (let i = 0; i <= quantityPromise - 1; i += 1) {
-    position = i + 1;
-    delay = delayPromise + stepDelay * i;
+    let position = i + 1;
+    let delay = delayPromise + stepDelay * i;
 
     createPromise(position, delay)
       .then(value =>
@@ -30,6 +30,7 @@ function handleSubmitClick(event) {
         )
       );
   }
+  event.target.reset();
 }
 
 function createPromise(position, delay) {
